@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ TITULO_PAGINA }}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos Globales Compartidos */
+        :root { --primary: #333; --secondary: #555; --bg: #fff; --text: #333; }
+        body { font-family: 'Open Sans', sans-serif; margin: 0; padding: 0; box-sizing: border-box; color: var(--text); background: var(--bg); }
+        h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; margin-top: 0; }
+        a { text-decoration: none; transition: 0.3s; }
+        img { max-width: 100%; display: block; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
+        .btn { padding: 12px 25px; border-radius: 30px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; display: inline-block; cursor: pointer; border: none; transition: transform 0.2s, box-shadow 0.2s; }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+        .grid { display: grid; gap: 30px; }
+        section { padding: 60px 0; }
+        footer { background: #222; color: #fff; padding: 40px 0; text-align: center; font-size: 0.9em; }
+        /* Inputs bonitos */
+        input, select, textarea { padding: 12px; border: 1px solid #ddd; border-radius: 5px; width: 100%; box-sizing: border-box; font-family: inherit; margin-bottom: 15px; }
+        input:focus { border-color: var(--primary); outline: none; }
+    </style>
+</head>
+<body>
+    <style>
+    body { background: #1a1a1a; color: #ddd; }
+    .gold-text { color: #d4af37; }
+    header { background: rgba(0,0,0,0.5); position: absolute; width: 100%; z-index: 10; padding: 20px 0; }
+    .hero-rest { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('{{ URL_FONDO_RESTAURANTE }}') center/cover; height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+    .reservation-box { background: #2a2a2a; padding: 40px; margin-top: -80px; position: relative; border-radius: 8px; box-shadow: 0 20px 40px rgba(0,0,0,0.5); max-width: 800px; margin-left: auto; margin-right: auto; border-top: 4px solid #d4af37; }
+    .btn-gold { background: #d4af37; color: #000; }
+    input { background: #333; border: 1px solid #444; color: white; }
+</style>
+
+<div class="hero-rest">
+    <h1 style="font-size: 4rem; margin-bottom: 10px;" class="gold-text">{{ NOMBRE_RESTAURANTE }}</h1>
+    <p style="font-size: 1.5rem; font-style: italic;">{{ SLOGAN_ELEGANTE }}</p>
+</div>
+
+<main class="container">
+    <div class="reservation-box">
+        <h3 class="gold-text" style="text-align: center; margin-bottom: 30px;">Reservar una Experiencia</h3>
+        <form class="grid" style="grid-template-columns: 1fr 1fr 1fr; gap: 20px;">
+            <input type="text" placeholder="Nombre Completo">
+            <input type="date">
+            <select style="background: #333; color: white; border: 1px solid #444; height: 46px;">
+                <option>2 Personas</option>
+                <option>4 Personas</option>
+                <option>6+ Personas</option>
+            </select>
+            <div style="grid-column: 1 / -1; text-align: center;">
+                <button type="button" class="btn btn-gold">Confirmar Reserva</button>
+            </div>
+        </form>
+    </div>
+
+    <section style="text-align: center;">
+        <h2 class="gold-text">Nuestro Chef Recomienda</h2>
+        <p style="max-width: 600px; margin: 0 auto 40px auto;">{{ DESCRIPCION_MENU }}</p>
+        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+            <img src="{{ URL_PLATO_1 }}" style="border-radius: 8px;">
+            <img src="{{ URL_PLATO_2 }}" style="border-radius: 8px;">
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>📍 {{ DIRECCION_LOCAL }} | 📞 {{ TELEFONO }}</p>
+    <p>Abierto de Martes a Domingo: 19:00 - 23:30</p>
+</footer>
+    </body>
+</html>
